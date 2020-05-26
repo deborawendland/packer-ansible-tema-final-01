@@ -17,14 +17,12 @@
         "apt-get install python3 python3-pip python3-apt -yq",
         "pip3 install ansible", 
         "apt install default-jre",
-        "wget -nv -O /tmp/jetty.tar.gz \"ttps://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.14.v20181114/jetty-distribution-9.4.14.v20181114.zip\"", 
-        "tar xzf /tmp/jetty.tar.gz -C /opt", 
-        "mv /opt/jetty* /opt/jetty", 
-        "useradd jetty -U -s /bin/false", 
-        "chown -R jetty:jetty /opt/jetty",
-	"nano /etc/default/jetty",
-	"echo  \"JETTY_HOME=/opt/jetty\nJETTY_USER=jetty\nJETTY_PORT=8888\nJETTY_HOST=http://localhost\nJETTY_LOGS=/opt/jetty/logs/\" > /etc/default/jetty",
-        "bin/jetty.sh  start"
+        "apt-get install unzip",
+        "apt-get upgrade",
+        "wget \"https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.29.v20200521/jetty-distribution-9.4.29.v20200521.zip\"",
+	"unzip jetty-distribution*.zip",
+	"cd jetty-distribution*",
+	"java -jar start.jar -Djetty.port=8888"
       ]
     },
     {
