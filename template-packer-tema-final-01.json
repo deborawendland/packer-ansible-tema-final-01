@@ -20,12 +20,12 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "./playbook-tema-final-01.yml"
+      "playbook_file": "playbook-tema-final-01.yml"
     },
     {
       "type": "file",
-      "source": "/var/lib/jenkins/workspace/infra/calculator/1.0/calculator-1.0.jar",
-      "destination": "."
+      "source": "calculator/1.0/calculator-1.0.jar",
+      "destination": "/"
     }
   ],
   "post-processors": [
