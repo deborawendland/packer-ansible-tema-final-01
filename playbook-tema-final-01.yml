@@ -1,8 +1,11 @@
 - name: Run ansbile on a Docker container
   hosts: all
   become_user: root
+  roles:
+    - { role: CSCfi.jetty }
   tasks:
-    - name: installing
+    - name: installing jdk
       apt:
         name: openjdk-8-jdk
         install_recommends: no
+
