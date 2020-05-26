@@ -2,7 +2,7 @@
   hosts: all
   become_user: root
   roles:
-    - role: { role: janesmae.jetty }
+    - role: janesmae.jetty
   tasks:
     - name: installing jdk
       apt:
