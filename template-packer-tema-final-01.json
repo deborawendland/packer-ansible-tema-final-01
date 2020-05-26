@@ -2,30 +2,22 @@
   "builders":[
     {
       "type": "docker",
-      "image": "ubuntu:18.04",
+      "image": "jetty",
       "commit": true,
       "changes": [
-        "EXPOSE 8888",
-        "ENTRYPOINT \"java\", \"-jar\", \"calculator-jetty-docker-1.0.jar\""
+        "EXPOSE 8888"
       ]
     }
   ],
   "provisioners":[
-    {
-      "type": "shell",
-      "inline": [
-        "sudo apt-get update",
-        "sudo apt-get install python3 python3-pip python3-apt -yq",
-        "sudo pip3 install ansible"
-      ]
-    },
+   
     {
       "type": "ansible-local",
       "playbook_file": "./playbook-tema-final-01.yml"
     },
     {
       "type": "file",
-      "source": "/var/lib/jenkins/workspace/infra/calculator-jetty-docker/1.0/calculator-jetty-docker-1.0.jar",
+      "source": "/var/lib/jenkins/workspace/infra/calculator-jetty-docker/1.0/calculator-jetty-docker-1.0.war",
       "destination": "/"
     }
   ],
