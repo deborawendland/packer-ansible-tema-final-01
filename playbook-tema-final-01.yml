@@ -1,8 +1,6 @@
 - name: Run ansbile on a Docker container
   hosts: all
   become_user: root
-  roles:
-    - role: janesmae.jetty
   tasks:
     - name: installing jdk
       apt:
