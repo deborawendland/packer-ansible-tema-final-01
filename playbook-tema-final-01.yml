@@ -2,7 +2,7 @@
   hosts: all
   become_user: root
   roles:
-    - { role: CSCfi.jetty }
+    - role: https://github.com/CSCfi/ansible-role-jetty
   tasks:
     - name: installing jdk
       apt:
