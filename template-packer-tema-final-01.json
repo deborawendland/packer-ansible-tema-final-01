@@ -6,7 +6,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8888",
-        "ENTRYPOINT [\"java\", \"-jar\", \"calculator-1.0.jar\"]"      ]
+        "ENTRYPOINT [\"java\", \"-cp\", \"calculator-1.0.jar\", \"com.deborawendland.cloud.tema08.app.MainRunner\"]"      ]
     }
   ],
   "provisioners":[
@@ -20,12 +20,12 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "playbook-tema-final-01.yml"
+      "playbook_file": "/home/jenkins/workspace/infra/playbook-tema-final-01.yml"
     },
     {
       "type": "file",
-      "source": "calculator/1.0/calculator-1.0.jar",
-      "destination": "/"
+      "source": "/home/jenkins/workspace/infra/calculator/1.0/calculator-1.0.jar",
+      "destination": "/calculator-1.0.jar"
     }
   ],
   "post-processors": [
@@ -33,7 +33,7 @@
       {
         "type": "docker-tag",
         "repository": "deborawendland/calculator",
-        "tag": "1.0"
+        "tag": "latest"
       },
       "docker-push"
     ]
