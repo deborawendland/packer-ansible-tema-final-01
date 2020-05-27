@@ -6,7 +6,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8888",
-        "ENTRYPOINT [\"java\", \"-cp\", \"calculator-1.0.jar\", \"com.deborawendland.cloud.tema08.app.MainRunner\"]"      ]
+        "ENTRYPOINT [\"java\", \"jar\", \"calculator.jar\"]"      ]
     }
   ],
   "provisioners":[
@@ -24,7 +24,7 @@
     },
     {
       "type": "file",
-      "source": "/home/jenkins/workspace/infra/calculator/1.0/calculator-1.0.jar",
+      "source": "/home/jenkins/workspace/infra/calculator/calculator.jar",
       "destination": "/calculator-1.0.jar"
     }
   ],
