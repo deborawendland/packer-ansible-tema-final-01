@@ -6,7 +6,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8888",
-        "ENTRYPOINT [\"java\", \"-jar\", \"calculator.jar\"]"      ]
+        "ENTRYPOINT [\"java\", \"-jar\", \"/calculator.jar\"]"      ]
     }
   ],
   "provisioners":[
