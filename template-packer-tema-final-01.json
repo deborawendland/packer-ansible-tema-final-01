@@ -6,7 +6,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8888",
-        "ENTRYPOINT [\"java\", \"jar\", \"calculator.jar\"]"      ]
+        "ENTRYPOINT [\"java\", \"-jar\", \"calculator.jar\"]"      ]
     }
   ],
   "provisioners":[
@@ -25,7 +25,7 @@
     {
       "type": "file",
       "source": "/home/jenkins/workspace/infra/calculator/calculator.jar",
-      "destination": "/calculator-1.0.jar"
+      "destination": "/calculator.jar"
     }
   ],
   "post-processors": [
